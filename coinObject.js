@@ -31,6 +31,7 @@ const coin = {
     const image = document.createElement("img");
     image.src = img;
     image.alt = alt;
+    image.style.height = '100px'
     body.appendChild(image)
     // Colocar uma imagem correspondente a essa valor.
     // image.src = "./CAMINHO/IMAGEM.JPEG"
@@ -40,15 +41,24 @@ const coin = {
 };
 
 function display20Flips() {
+  let div = document.createElement('div');
+  div.innerHTML = 'Flips:  '
+  div.style.fontSize = '25px'
   const results = [];
   body.innerHTML = ''
   for(let i = 0; i < 20; i++){
   
     let node = document.createTextNode(coin.toString() + ' ')
-    body.appendChild(node)
+    
+    body.appendChild(div)
+    div.appendChild(node)
     results.push(node.textContent)
   }
-  
+  let div2 = document.createElement('div');
+  div2.innerHTML = 'Imagens :  '
+  div2.style.fontSize = '25px'
+  body.appendChild(div2)
+
   return results
   // Use um loop para arremessar a moeda 20 vezes.
   // Depois que o seu loop terminar, exiba o resultado na página no formato de TEXTO.
@@ -57,10 +67,10 @@ function display20Flips() {
   // Caso esqueça de retornar "results", sua função não
   // irá passar nos testes.
 }
-
+display20Flips()
 function display20Images() {
   const results = [];
-  body.innerHTML = '';
+  
 
   for(let i = 0; i < 20; i++){
   coin.toHTML()
@@ -77,5 +87,5 @@ function display20Images() {
   // Caso esqueça de retornar "results", sua função não
   // irá passar nos testes.
 }
-
+display20Images()
 
